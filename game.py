@@ -28,9 +28,25 @@ comp_indica.grid(row=0,column=3)
 msg = Label(root,font=50,bg="black",fg="white")
 msg.grid(row=3,column=2)
 
-rock = Button(root,width=20,height=2,text="ROCK",bg="black",fg="white").grid(row=2,column=1)
-paper = Button(root,width=20,height=2,text="PAPER",bg="black",fg="white").grid(row=2,column=2)
-sciss = Button(root,width=20,height=2,text="SCISSORS",bg="black",fg="white").grid(row=2,column=3)
+def func(x):
+	y=random.randint(0,2)
+	if y==0:
+		comp_label.configure(image=rock_ci)
+	elif y==1:
+		comp_label.configure(image=pap_ci)
+	elif y==2:
+		comp_label.configure(image=sciss_ci)
+	
+	if x==0:
+		user_label.configure(image=rock_i)
+	elif x==1:
+		user_label.configure(image=pap_i)
+	elif x==2:
+		user_label.configure(image=sciss_i)
+
+rock = Button(root,width=20,height=2,text="ROCK",bg="black",fg="white",command=lambda:func(0)).grid(row=2,column=1)
+paper = Button(root,width=20,height=2,text="PAPER",bg="black",fg="white",command=lambda:func(1)).grid(row=2,column=2)
+sciss = Button(root,width=20,height=2,text="SCISSORS",bg="black",fg="white",command=lambda:func(2)).grid(row=2,column=3)
 
 
 

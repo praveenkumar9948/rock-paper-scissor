@@ -29,7 +29,10 @@ comp_indica.grid(row=0,column=3)
 msg = Label(root,font=50,bg="black",fg="white")
 msg.grid(row=3,column=2)
 
-
+def click():
+	sc=int(count["text"])
+	sc+=1
+	count["text"]=str(sc)
 
 
 def upmsg(i):
@@ -68,7 +71,7 @@ def wim(x,y):
 		elif y==1:
 			upmsg("LOST!")
 			upuserscore()
-
+	click()
 
 
 def func(x):
@@ -99,7 +102,9 @@ def reset():
 	upmsg("")
 	comp_label.configure(image=rock_ci)
 	user_label.configure(image=rock_i)
-	
+	sc=int(count["text"])
+	sc=0
+	count["text"]=str(sc) 
 	
 re = Button(root,width=2,height=2,text="re",bg="black",fg="white",command=lambda:reset()).grid(row=3,column=4)
 rock = Button(root,width=20,height=2,text="ROCK",bg="black",fg="white",command=lambda:func(0)).grid(row=2,column=1)

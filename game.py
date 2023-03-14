@@ -27,5 +27,5 @@ comp_indica.grid(row=0,column=3)
 
 msg = Label(root,font=50,bg="black",fg="white")
 msg.grid(row=3,column=2)
-
+// added labels and score.
 root.mainloop()

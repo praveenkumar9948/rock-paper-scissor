@@ -88,6 +88,20 @@ def func(x):
 		user_label.configure(image=sciss_i)
 	wim(x,y)
 
+def reset():
+	
+	sc=int(uscore["text"])
+	sc=0
+	uscore["text"]=str(sc)
+	sc=int(cscore["text"])
+	sc=0
+	cscore["text"]=str(sc)
+	upmsg("")
+	comp_label.configure(image=rock_ci)
+	user_label.configure(image=rock_i)
+	
+	
+re = Button(root,width=2,height=2,text="re",bg="black",fg="white",command=lambda:reset()).grid(row=3,column=4)
 rock = Button(root,width=20,height=2,text="ROCK",bg="black",fg="white",command=lambda:func(0)).grid(row=2,column=1)
 paper = Button(root,width=20,height=2,text="PAPER",bg="black",fg="white",command=lambda:func(1)).grid(row=2,column=2)
 sciss = Button(root,width=20,height=2,text="SCISSORS",bg="black",fg="white",command=lambda:func(2)).grid(row=2,column=3)

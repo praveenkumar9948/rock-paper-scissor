@@ -28,6 +28,18 @@ comp_indica.grid(row=0,column=3)
 msg = Label(root,font=50,bg="black",fg="white")
 msg.grid(row=3,column=2)
 
+def upmsg(i):
+	msg['text']=i
+
+def upuserscore():
+	sc=int(uscore["text"])
+	sc+=1
+	uscore["text"]=str(sc)
+def upcompscore():
+	sc=int(cscore["text"])
+	sc+=1
+	cscore["text"]=str(sc)
+
 def func(x):
 	y=random.randint(0,2)
 	if y==0:

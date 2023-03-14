@@ -28,11 +28,7 @@ comp_indica.grid(row=0,column=3)
 
 msg = Label(root,font=50,bg="black",fg="white")
 msg.grid(row=3,column=2)
-// added labels and score.
 
-rock = Button(root,width=20,height=2,text="ROCK",bg="black",fg="white").grid(row=2,column=1)
-paper = Button(root,width=20,height=2,text="PAPER",bg="black",fg="white").grid(row=2,column=2)
-sciss = Button(root,width=20,height=2,text="SCISSORS",bg="black",fg="white").grid(row=2,column=3)
 
 
 
@@ -68,10 +64,10 @@ def wim(x,y):
 	elif x==2:
 		if y==0:
 			upmsg("WON!")
-			upuserscore()
+			upcompscore()
 		elif y==1:
 			upmsg("LOST!")
-			upcompscore()
+			upuserscore()
 
 
 

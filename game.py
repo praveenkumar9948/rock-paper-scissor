@@ -48,40 +48,39 @@ def upcompscore():
 	cscore["text"]=str(sc)
 
 def wim(x,y):
-	if x==y:
-		upmsg("Tie!")
-	elif x==0:
+	if x==0:
 		if y==1:
-			upmsg("LOST!")
 			upcompscore()
 		elif y==2:
-			upmsg("WON!")
 			upuserscore()
 	elif x==1:
 		if y==0:
-			upmsg("WON!")
 			upuserscore()
 		elif y==2:
-			upmsg("LOST!")
 			upcompscore()
 	elif x==2:
 		if y==0:
-			upmsg("WON!")
 			upcompscore()
 		elif y==1:
-			upmsg("LOST!")
 			upuserscore()
+	if int(uscore["text"])==int(cscore["text"]):
+		upmsg("TIE!")
+	elif int(uscore["text"])>int(cscore["text"]):
+		upmsg("WON!")
+	elif int(uscore["text"])<int(cscore["text"]):
+		upmsg("LOST!") 
+		
 	click()
 
 
 def func(x):
 	y=random.randint(0,2)
 	if y==0:
-		comp_label.configure(image=rock_ci)
+		comp_label.configure(image=rock_i)
 	elif y==1:
-		comp_label.configure(image=pap_ci)
+		comp_label.configure(image=pap_i)
 	elif y==2:
-		comp_label.configure(image=sciss_ci)
+		comp_label.configure(image=sciss_i)
 	
 	if x==0:
 		user_label.configure(image=rock_i)

@@ -1,0 +1,19 @@
+# Specify the version of the docker-compose file
+version: '3'
+
+# Define the services to be run in the container
+services:
+  # Define the service for your app
+  prod_app:
+    # Build the image using the Dockerfile in the current directory
+    build:
+      context: .
+      dockerfile: Dockerfile.prod
+    # Set the environment variable for the X server display
+    environment:
+      - DISPLAY=:1
+    # Mount the X server socket file in the container
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+    # Set the restart policy to automatically restart the container
+    restart: unless-stopped
